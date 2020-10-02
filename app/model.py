@@ -1,9 +1,14 @@
 import joblib
 import numpy as np
 from pathlib import Path
-
+import logging
+import sys
+import os
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.datasets import load_boston
+
+logger = logging.getLogger(__name__)
+logging.basicConfig(level=os.environ.get("LOGLEVEL", "INFO"))
 
 
 class Model:
@@ -43,6 +48,9 @@ def get_model():
 
 
 if __name__ == "__main__":
+    logger.info("Loading data...")
     X, y = load_boston(return_X_y=True)
+    logger.info("Training model...")
     model.train(X, y)
+    logger.info("Saving model...")
     model.save()
