@@ -16,6 +16,5 @@ Fastapi demo for fagfredag
 ## Kjør
 ```docker run -p 5000:8080 --env-file .env fastapi-demo```
 
-
-# Sjekk ut
+## Sjekk ut
 [http://localhost:5000/docs]()
