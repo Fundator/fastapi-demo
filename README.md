@@ -11,5 +11,4 @@ Fastapi demo for fagfredag
 ```docker build -t fastapi-demo .```
 
 ## Kjør
-
 ```docker run -p 5000:8080 --env-file .env fastapi-demo```
